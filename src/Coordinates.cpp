@@ -2,6 +2,7 @@
 
 // default constructor
 Coordinates::Coordinates() {
+    // default attributes
     x_pos = 0;
     y_pos = 0;
     z_pos = 0;
@@ -9,23 +10,16 @@ Coordinates::Coordinates() {
 
 // specific constructor
 Coordinates::Coordinates(float x, float y, float z) {
-   x_pos = x; 
-   y_pos = y; 
-   z_pos = z; 
+    // user defined attributes
+    x_pos = x; 
+    y_pos = y; 
+    z_pos = z; 
 }
 
 // mutators
-void Coordinates::setXPos(float value) {
-    x_pos = value;
-}
-
-void Coordinates::setYPos(float value) {
-    y_pos = value;
-}
-
-void Coordinates::setZPos(float value) {
-    z_pos = value;
-}
+void Coordinates::setXPos(float value) { x_pos = value; }
+void Coordinates::setYPos(float value) { y_pos = value; }
+void Coordinates::setZPos(float value) { z_pos = value; }
 
 // accessors
 float Coordinates::getXPos() { return x_pos; }

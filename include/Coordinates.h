@@ -3,6 +3,7 @@
 
 class Coordinates {
     private:
+        // attributes
         float x_pos;
         float y_pos;
         float z_pos;
@@ -24,4 +25,5 @@ class Coordinates {
         float getYPos();
         float getZPos();
 };
+
 #endif

@@ -1,4 +1,4 @@
-#include "../include/Coordinates.h"
+#include "Coordinates.h"
 #include <string>
 
 #ifndef ATOM_H
@@ -6,6 +6,7 @@
 
 class Atom {
     private:
+        // attributes
         std::string Name;
         int Number;
         Coordinates Coord;

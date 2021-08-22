@@ -14,15 +14,15 @@ class AminoAcid {
         AminoAcid();
 
         // specific constructor
-        AminoAcid(std::string name, int number);
+        AminoAcid(std::string, int);
 
         // overloaded specific constructor
-        AminoAcid(std::string name, int number, std::list<Atom> atoms);
+        AminoAcid(std::string, int, std::list<Atom>);
 
         // mutators
-        void setName(std::string name);
-        void setNumber(int number);
-        void addAtom(std::string name, int number, float x, float y, float z);
+        void setName(std::string);
+        void setNumber(int);
+        void addAtom(std::string, int, float, float, float);
 
         // accessors
         std::string getName();

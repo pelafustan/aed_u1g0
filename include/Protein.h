@@ -1,6 +1,4 @@
 #include "Chain.h"
-#include <list>
-#include <string>
 
 #ifndef PROTEIN_H
 #define PROTEIN_H
@@ -16,12 +14,15 @@ class Protein {
         Protein();
 
         // specific constructor
-        Protein(std::string name, std::string id);
+        Protein(std::string, std::string);
+
+        // overloaded specific constructor
+        Protein(std::string, std::string, std::list<Chain>);
 
         // mutators
-        void setName(std::string name);
-        void setID(std::string id);
-        void addChain(Chain chain);
+        void setName(std::string);
+        void setID(std::string);
+        void addChain(Chain);
 
         // accessors
         std::string getName();

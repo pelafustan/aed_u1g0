@@ -1,37 +1,36 @@
 #include "../include/Atom.h"
-#include <iostream>
 
 // default constructor
 Atom::Atom() {
     // defult attributes
-    Name = "";
-    Number = 0;
+    this->Name = "";
+    this->Number = 0;
 }
 
 // specific constructor
 Atom::Atom(std::string name, int number, float x, float y, float z) {
     // user defined attributes
-    Name = name;
-    Number = number;
-    Coord = Coordinates(x, y, z);
+    this->Name = name;
+    this->Number = number;
+    this->Coord = Coordinates(x, y, z);
 }
 
 // mutators
-void Atom::setName(std::string value) { Name = value; }
-void Atom::setNumber(int value) { Number = value; }
-void Atom::setX(float value) { Coord.setXPos(value); }
-void Atom::setY(float value) { Coord.setYPos(value); }
-void Atom::setZ(float value) { Coord.setZPos(value); }
+void Atom::setName(std::string value) { this->Name = value; }
+void Atom::setNumber(int value) { this->Number = value; }
+void Atom::setX(float value) { this->Coord.setXPos(value); }
+void Atom::setY(float value) { this->Coord.setYPos(value); }
+void Atom::setZ(float value) { this->Coord.setZPos(value); }
 
 // accessors
-std::string Atom::getName() { return Name; }
-int Atom::getNumber() { return Number; }
-float Atom::getX() { return Coord.getXPos(); }
-float Atom::getY() { return Coord.getYPos(); }
-float Atom::getZ() { return Coord.getZPos(); }
+std::string Atom::getName() { return this->Name; }
+int Atom::getNumber() { return this->Number; }
+float Atom::getX() { return this->Coord.getXPos(); }
+float Atom::getY() { return this->Coord.getYPos(); }
+float Atom::getZ() { return this->Coord.getZPos(); }
 void Atom::getCoordinates() {
-    float x = Coord.getXPos();
-    float y = Coord.getYPos();
-    float z = Coord.getZPos();
+    float x = this->Coord.getXPos();
+    float y = this->Coord.getYPos();
+    float z = this->Coord.getZPos();
     std::cout << x << ", " << y << ", " << z << std::endl;
 }

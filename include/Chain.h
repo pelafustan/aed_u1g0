@@ -1,5 +1,4 @@
 #include "AminoAcid.h"
-#include <list>
 
 #ifndef CHAIN_H
 #define CHAIN_H
@@ -13,14 +12,14 @@ class Chain {
         Chain();
 
         // specific constructor
-        Chain(std::string id);
+        Chain(std::string);
 
         // overloaded specific constructor
-        Chain(std::string id, std::list<AminoAcid> aminoacids);
+        Chain(std::string, std::list<AminoAcid>);
         
         // mutators
-        void setID(std::string id);
-        void addAminoAcid(AminoAcid aminoacid);
+        void setID(std::string);
+        void addAminoAcid(AminoAcid);
         
         // accessors
         std::string getID();

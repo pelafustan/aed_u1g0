@@ -1,5 +1,6 @@
 #include "Coordinates.h"
 #include <string>
+#include <iostream>
 
 #ifndef ATOM_H
 #define ATOM_H
@@ -16,15 +17,15 @@ class Atom {
         Atom();
 
         // specific constructor
-        Atom(std::string name, int number, float x, float y, float z);
+        Atom(std::string, int, float, float, float);
 
         // mutators
-        void setName(std::string value);
-        void setNumber(int value);
-        void setX(float value);
-        void setY(float value);
-        void setZ(float value);
-        void setCoordinates(float x, float y, float z);
+        void setName(std::string);
+        void setNumber(int);
+        void setX(float);
+        void setY(float);
+        void setZ(float);
+        void setCoordinates(float, float, float);
 
         // accessors
         std::string getName();

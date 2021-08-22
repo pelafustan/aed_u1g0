@@ -1,37 +1,36 @@
 #include "../include/AminoAcid.h"
-#include <list>
 
 // default constructor
 AminoAcid::AminoAcid() {
     // default attributes
-    Name = "";
-    Number = 0;
+    this->Name = "";
+    this->Number = 0;
 }
 
 // specific constructor
 AminoAcid::AminoAcid(std::string name, int number) {
     // user defined attributes
-    Name = name;
-    Number = number;
+    this->Name = name;
+    this->Number = number;
 }
 
 // overloaded specific constructor
 AminoAcid::AminoAcid(std::string name, int number, std::list<Atom> atoms) {
     // user defined attributes
-    Name = name;
-    Number = number;
-    Atoms = atoms;
+    this->Name = name;
+    this->Number = number;
+    this->Atoms = atoms;
 }
 
 // mutators
-void AminoAcid::setName(std::string name) { Name = name; }
-void AminoAcid::setNumber(int number) { Number = number; }
+void AminoAcid::setName(std::string name) { this->Name = name; }
+void AminoAcid::setNumber(int number) { this->Number = number; }
 void AminoAcid::addAtom(std::string name, int number, float x, float y, float z) {
     Atom atom = Atom(name, number, x, y, z);
-    Atoms.push_back(atom);
+    this->Atoms.push_back(atom);
 }
 
 // accessors
-std::string AminoAcid::getName() { return Name; }
-int AminoAcid::getNumber() { return Number; }
-std::list<Atom> AminoAcid::getAtoms() { return Atoms; }
+std::string AminoAcid::getName() { return this->Name; }
+int AminoAcid::getNumber() { return this->Number; }
+std::list<Atom> AminoAcid::getAtoms() { return this->Atoms; }

@@ -13,12 +13,12 @@ class Coordinates {
         Coordinates();
 
         // specific constructor
-        Coordinates(float x, float y, float z);
+        Coordinates(float, float, float);
 
         // mutators
-        void setXPos(float value);
-        void setYPos(float value);
-        void setZPos(float value);
+        void setXPos(float);
+        void setYPos(float);
+        void setZPos(float);
 
         // accessors
         float getXPos();

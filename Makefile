@@ -6,7 +6,7 @@ _dummy := $(shell mkdir -p obj)
 
 CXX := g++
 CXXFLAGS := -std=c++17 -pedantic-errors -Wall -Wextra\
-	    -Werror -MMD -MP -I$(INC_DIR)
+	    -Werror -MMD -MP -I$(INC_DIR) -ggdb
 
 SOURCES := $(wildcard $(SRC_DIR)/*.cpp)
 OBJECTS := $(SOURCES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)

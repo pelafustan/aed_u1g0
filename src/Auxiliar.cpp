@@ -1,5 +1,52 @@
 #include "../include/Auxiliar.h"
 
+void noProtein(){
+    std::cout << "----------------------------" << std::endl;
+    std::cout << "No proteins created yet.\n";
+    std::cout << "Try with other option...\n";
+}
+
+int options() {
+    int opt;
+    std::cout << "----------------------------" << std::endl;
+    std::cout << "Choose a number between following options:\n";
+    std::cout << "1. Create list of proteins.\n";
+    std::cout << "2. Add protein to existing list of protein.\n";
+    std::cout << "3. Print protein data (if exists)\n";
+    std::cout << "4. Finish program.\n";
+    std::cout << "Choose your destiny: ";
+    std::cin >> opt;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    if ((opt < 1) || (opt > 4)) {
+        std::cout << "----------------------------" << std::endl;
+        std::cout << "Your selection is out of range.\n";
+        std::cout << "Try again...\n";
+        opt = options();
+    }
+    return opt;
+}
+
+void welcome() {
+    std::cout << "----------------------------" << std::endl;
+    std::cout << "Hello there.\n";
+    std::cout << "This program allows you to create a list of proteins\n";
+    std::cout << "with the following attributes:\n";
+    std::cout << "\t-Each protein have a name, an ID and a list of chains.\n";
+    std::cout << "\t-Each chain have an ID and a list of amino acids.\n";
+    std::cout << "\t-Each amino acid have a name, a number and a list of atoms.\n";
+    std::cout << "\t-Each atom have a name, a number and 3D coordinates.\n";
+    std::cout << "All the data should be passed to promp by user\n";
+}
+
+void bye(bool& flag) {
+    if (!flag) {
+        std::cout << "----------------------------" << std::endl;
+    }
+    std::cout << "Thank for using this program.\n";
+    std::cout << "See you next time!\n";
+    std::cout << "----------------------------" << std::endl;
+}
+
 int how_many(std::string thing) {
     int quantity;
     std::cout << "How many " << thing << "s?: ";
@@ -80,6 +127,19 @@ std::list<Protein> proteinCreator(int amount) {
         proteins.push_back(protein);
     }
     return proteins;
+}
+
+void addProtein(std::list<Protein>& proteins) {
+    std::string name;
+    std::string id;
+    std::cout << "Give me the name of new protein: ";
+    std::getline(std::cin, name);
+    std::cout << "Give me the ID of new protein ";
+    std::getline(std::cin, id);
+    int chain_amount = how_many("chain");
+    std::list<Chain> chains = chainCreator(chain_amount);
+    Protein protein = Protein(name, id, chains);
+    proteins.push_back(protein);
 }
 
 void printProtein(std::list<Protein> proteins) {

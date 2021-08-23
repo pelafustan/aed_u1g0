@@ -4,29 +4,63 @@
 #ifndef AMINOACID_H
 #define AMINOACID_H
 
+/**
+ * Class that serve as blueprint for an amino acid.
+ */
 class AminoAcid {
     private:
         std::string Name;
         int Number;
         std::list<Atom> Atoms;
     public:
-        // default constructor
+        /**
+         * Default constructor.
+         * Allow instantiation with default attributes.
+         */
         AminoAcid();
 
-        // specific constructor
+        /**
+         * Specific constructor.
+         * Allows instantiation with user defined attributes.
+         * Needed parameters: name (string) and number (integer).
+         */
         AminoAcid(std::string, int);
 
-        // overloaded specific constructor
+        /**
+         * Overloaded specific constructor.
+         * Besides the parameters asked in the specific constructor, this
+         * allows the user to instantiate the amino acid with a list of atoms.
+         */
         AminoAcid(std::string, int, std::list<Atom>);
 
-        // mutators
+        /**
+         * Mutator for amino acid name.
+         */
         void setName(std::string);
+
+        /**
+         * Mutator for amino acid number.
+         */
         void setNumber(int);
+
+        /**
+         * Mutator that add an atom to list of atoms.
+         */
         void addAtom(std::string, int, float, float, float);
 
-        // accessors
+        /**
+         * Accessor that returns amino acid name.
+         */
         std::string getName();
+
+        /**
+         * Accessor that returns amino acid number.
+         */
         int getNumber();
+
+        /**
+         * Accessor that returns amino acid list of atoms.
+         */
         std::list<Atom> getAtoms();
 };
 

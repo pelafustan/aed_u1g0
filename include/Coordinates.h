@@ -1,28 +1,57 @@
 #ifndef COORDINATES_H
 #define COORDINATES_H
 
+/**
+ * Class that serves as blueprint for coordinates of an Atom. 
+ */
 class Coordinates {
     private:
-        // attributes
         float x_pos;
         float y_pos;
         float z_pos;
 
     public:
-        // default constructor
+        /**
+         * Default constructor.
+         * This allows instantiation with default attributes.
+         */
         Coordinates();
 
-        // specific constructor
+        /**
+         * Specific constructor.
+         * Allows instantiation with user defined attributes.
+         * This attributes are x, y and z coordinates, all float type.
+         */
         Coordinates(float, float, float);
 
-        // mutators
+        /**
+         * Mutator for X coordinate. Need a float parameter.
+         */
         void setXPos(float);
+
+        /**
+         * Mutator for Y coordinate. Need a float parameter.
+         */
         void setYPos(float);
+
+        /**
+         * Mutator for Z coordinate. Need a float parameter.
+         */
         void setZPos(float);
 
-        // accessors
+        /**
+         * Accessor for X coordinate. Returns a float.
+         */
         float getXPos();
+
+        /**
+         * Accessor for Y coordinate. Returns a float.
+         */
         float getYPos();
+
+        /**
+         * Accessor for Z coordinate. Returns a float.
+         */
         float getZPos();
 };
 

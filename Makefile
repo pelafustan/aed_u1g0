@@ -12,7 +12,7 @@ SOURCES := $(wildcard $(SRC_DIR)/*.cpp)
 OBJECTS := $(SOURCES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 DEPS    := $(wildcard $(OBJ_DIR)/*.d)
 
-.PHONY: clean run
+.PHONY: clean run doc
 
 Main: $(OBJECTS)
 	$(CXX) $(LDFLAGS) $^ -o $@
@@ -21,10 +21,14 @@ $(OBJECTS): $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $(OUTPUT_OPTION) $<
 
 clean:
-	rm -rfv $(OBJ_DIR) Main
+	rm -rfv $(OBJ_DIR) Main doc
 
 run:
 	./Main
+
+doc:
+	@doxygen ./Doxyfile
+	@xdg-open ./doc/html/index.html&
 
 -include $(DEPS)
 

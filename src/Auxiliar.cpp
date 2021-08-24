@@ -51,12 +51,11 @@ int how_many(std::string thing) {
     int quantity;
     std::cout << "How many " << thing << "s?: ";
     std::cin >> quantity;
-    while (quantity < 1) {
-        std::cout << "At least you should have one " << thing << std::endl;
-        std::cin >> quantity;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    if (quantity < 1) {
+        std::cout << "At least you should have one " << thing << std::endl;
+        quantity = how_many(thing);
+    }
     return quantity;
 }
 
